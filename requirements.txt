@@ -1,0 +1,11 @@
+mysql-connector-python==8.0.27
+mysqlclient
+protobuf~=5.29.3
+pydantic==2.4.2
+python-dotenv
+grpcio==1.70.0
+grpcio-tools==1.70.0
+redis==5.2.1
+pymysql==1.1.1
+mypy-protobuf==3.6.0
+confluent-kafka==2.8.0
