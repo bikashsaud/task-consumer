@@ -1,0 +1,18 @@
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+SERVICE_HOST = os.getenv("SERVICE_HOST")
+SERVICE_PORT = os.getenv("SERVICE_PORT")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_HOST = os.getenv("DB_HOST")
+DB_PORT = os.getenv("DB_PORT")
+DB_NAME = os.getenv("DB_NAME")
+
+KAFKA_BROKER = os.getenv("KAFKA_BROKER")
+KAFKA_PENDING_TASK_PROCESSOR_TOPIC = os.getenv("KAFKA_PENDING_TASK_PROCESSOR_TOPIC")
+TASK_PROCESSOR_CLIENT = os.getenv("TASK_PROCESSOR_CLIENT")
+TASK_CONSUME_GROUP_ID = os.getenv("TASK_CONSUME_GROUP_ID")
+MAX_PROCESSING_RETRY = os.getenv("MAX_PROCESSING_RETRY")
