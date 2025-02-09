@@ -1,0 +1,63 @@
+syntax = "proto3";
+package taskprocessservice.taskpb.task;
+
+
+enum Status {
+  DEFAULT_STATUS = 0;
+  PENDING = 1;
+  PROCESSING = 2;
+  COMPLETED = 3;
+  FAILED = 4;
+}
+
+
+message Debug{
+  string debug_id = 1;
+  string user_id = 2;
+  string trace_id = 3;
+  string ip = 4;
+}
+
+// fetch data
+message FetchTaskRequest {}
+
+message FetchTaskResponse {
+  int64 id = 1;
+  Status status = 2;
+  int64 created_at = 3;
+  int64 updated_at = 4;
+}
+
+message FetchTaskBaseRequest {
+  Debug debug = 1;
+  FetchTaskRequest fetch_task = 2;
+}
+
+message FetchTaskBaseResponse {
+  bool error = 1;
+  bool success = 2;
+  string error_message = 3;
+  repeated FetchTaskResponse fetch_task_response = 4;
+}
+
+// update
+message UpdateTaskRequest {
+  Status status = 2;
+}
+
+message UpdateTaskResponse {
+  int64 id = 1;
+  Status status = 2;
+}
+
+message UpdateTaskBaseRequest {
+  Debug debug = 1;
+  UpdateTaskRequest update_task = 2;
+}
+
+message UpdateTaskBaseResponse {
+  bool error = 1;
+  bool success = 2;
+  string error_message = 3;
+  UpdateTaskResponse update_task_response = 4;
+}

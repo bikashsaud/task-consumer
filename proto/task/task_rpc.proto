@@ -1,0 +1,9 @@
+syntax = "proto3";
+package taskprocessservice.taskpb.task;
+import "task/task.proto";
+
+
+service TaskRpc {
+  rpc fetchTask (FetchTaskBaseRequest) returns (FetchTaskBaseResponse);
+  rpc updateTaskStatus (UpdateTaskBaseRequest) returns (UpdateTaskBaseResponse);
+}
